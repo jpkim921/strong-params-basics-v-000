@@ -24,11 +24,11 @@ class PostsController < ApplicationController
 	  redirect_to post_path(@post)
 	end
 
-	def update
-	  @post = Post.find(params[:id])
-	  @post.update(params["post"])
-	  redirect_to post_path(@post)
-	end
+	# def update
+	#   @post = Post.find(params[:id])
+	#   @post.update(params["post"])
+	#   redirect_to post_path(@post)
+	# end
 
 	# changed the update action from above to below to allow strong params
 	def update
