@@ -17,7 +17,7 @@ class PostsController < ApplicationController
 	#   redirect_to post_path(@post)
 	# end
 
-	changed the create action from above to below to allow strong params
+	# changed the create action from above to below to allow strong params
 	def create
 	  @post = Post.new(params.require(:post).permit(:title, :description))
 	  @post.save
