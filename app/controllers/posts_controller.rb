@@ -30,6 +30,13 @@ class PostsController < ApplicationController
 	  redirect_to post_path(@post)
 	end
 
+	# changed the update action from above to below to allow strong params
+	def update
+	  @post = Post.find(params[:id])
+	  @post.update(params.require(:post).permit(:title))
+	  redirect_to post_path(@post)
+	end
+
 	def edit
 	  @post = Post.find(params[:id])
 	end
